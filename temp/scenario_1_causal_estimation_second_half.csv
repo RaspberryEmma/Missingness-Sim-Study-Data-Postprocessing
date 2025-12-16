@@ -1,0 +1,4 @@
+"missingness_mechanisms","two_step_lasso_X_bias","two_step_lasso_X_bias_percentage","two_step_lasso_X_coverage","two_step_lasso_union_bias","two_step_lasso_union_bias_percentage","two_step_lasso_union_coverage"
+"FULL",0.0928227689011452,0.18564553780229,0,0.0928227689011452,0.18564553780229,0
+"MNAR",0.093188783690017,0.186377567380034,0,0.093188783690017,0.186377567380034,0
+"MCAR",0.0960964079006384,0.192192815801277,0,0.0960964079006384,0.192192815801277,0
