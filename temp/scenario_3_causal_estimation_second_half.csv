@@ -1,4 +1,4 @@
-"missingness_mechanisms","two_step_lasso_X_bias","two_step_lasso_X_bias_percentage","two_step_lasso_X_coverage","two_step_lasso_union_bias","two_step_lasso_union_bias_percentage","two_step_lasso_union_coverage"
-"FULL",0.0987613346758894,0.197522669351779,0,0.0987613346758894,0.197522669351779,0
-"MNAR",0.0985086143351063,0.197017228670213,0,0.0985086143351063,0.197017228670213,0
-"MCAR",0.0999664142068646,0.199932828413729,0,0.0999664142068646,0.199932828413729,0
+"missingness_mechanisms","sample_size_before","sample_size_after","two_step_lasso_X_bias","two_step_lasso_X_bias_percentage","two_step_lasso_X_coverage","two_step_lasso_union_bias","two_step_lasso_union_bias_percentage","two_step_lasso_union_coverage"
+"FULL",100000,100000,0.0987613,0.197523,0,0.0987613,0.197523,0
+"MNAR",25955,500000,0.0953563,0.190713,0,0.0953563,0.190713,0
+"MCAR",25534,500000,0.0966826,0.193365,0,0.0966826,0.193365,0

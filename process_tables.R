@@ -8,7 +8,7 @@
 # Emma Tarmey
 #
 # Started:          15/12/2025
-# Most Recent Edit: 16/12/2025
+# Most Recent Edit: 18/12/2025
 # ****************************************
 
 
@@ -24,34 +24,47 @@ if (Sys.getenv("RSTUDIO") == "1") {
   setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 }
 
+library(tidyverse)
+
+#turn off scientific notation for all variables
+options(scipen=999) 
+
 missingness_mechanisms <- c("FULL", "MNAR", "MCAR")
 true_causal_effect     <- 0.50
 total_confounders      <- 32
 open_backdoor_paths    <- rep(total_confounders, length.out = length(missingness_mechanisms))
   
-scenario_1_FULL_data <- read.csv("data/missingness_sim_scenario_1_missingness_method_CCA_FULL_results.csv", row.names = 1)
-scenario_1_MNAR_data <- read.csv("data/missingness_sim_scenario_1_missingness_method_CCA_MNAR_results.csv", row.names = 1)
-scenario_1_MCAR_data <- read.csv("data/missingness_sim_scenario_1_missingness_method_CCA_MCAR_results.csv", row.names = 1)
+scenario_1_FULL_data        <- read.csv("data/missingness_sim_scenario_1_missingness_method_CCA_FULL_results.csv", row.names = 1)
+scenario_1_MNAR_data        <- read.csv("data/missingness_sim_scenario_1_missingness_method_CCA_MNAR_results.csv", row.names = 1)
+scenario_1_MCAR_data        <- read.csv("data/missingness_sim_scenario_1_missingness_method_CCA_MCAR_results.csv", row.names = 1)
+scenario_1_sample_size_data <- read.csv("data/missingness_sim_scenario_1_missingness_method_CCA_sample_size_table.csv",  row.names = 1)
 
-scenario_2_FULL_data <- read.csv("data/missingness_sim_scenario_2_missingness_method_naive_MI_FULL_results.csv", row.names = 1)
-scenario_2_MNAR_data <- read.csv("data/missingness_sim_scenario_2_missingness_method_naive_MI_MNAR_results.csv", row.names = 1)
-scenario_2_MCAR_data <- read.csv("data/missingness_sim_scenario_2_missingness_method_naive_MI_MCAR_results.csv", row.names = 1)
+scenario_2_FULL_data        <- read.csv("data/missingness_sim_scenario_2_missingness_method_naive_MI_FULL_results.csv", row.names = 1)
+scenario_2_MNAR_data        <- read.csv("data/missingness_sim_scenario_2_missingness_method_naive_MI_MNAR_results.csv", row.names = 1)
+scenario_2_MCAR_data        <- read.csv("data/missingness_sim_scenario_2_missingness_method_naive_MI_MCAR_results.csv", row.names = 1)
+scenario_2_sample_size_data <- read.csv("data/missingness_sim_scenario_2_missingness_method_naive_MI_sample_size_table.csv",  row.names = 1)
 
-scenario_3_FULL_data <- read.csv("data/missingness_sim_scenario_3_missingness_method_stacked_MI_FULL_results.csv", row.names = 1)
-scenario_3_MNAR_data <- read.csv("data/missingness_sim_scenario_3_missingness_method_stacked_MI_MNAR_results.csv", row.names = 1)
-scenario_3_MCAR_data <- read.csv("data/missingness_sim_scenario_3_missingness_method_stacked_MI_MCAR_results.csv", row.names = 1)
+scenario_3_FULL_data        <- read.csv("data/missingness_sim_scenario_3_missingness_method_stacked_MI_FULL_results.csv", row.names = 1)
+scenario_3_MNAR_data        <- read.csv("data/missingness_sim_scenario_3_missingness_method_stacked_MI_MNAR_results.csv", row.names = 1)
+scenario_3_MCAR_data        <- read.csv("data/missingness_sim_scenario_3_missingness_method_stacked_MI_MCAR_results.csv", row.names = 1)
+scenario_3_sample_size_data <- read.csv("data/missingness_sim_scenario_3_missingness_method_stacked_MI_sample_size_table.csv",  row.names = 1)
 
-scenario_4_FULL_data <- read.csv("data/missingness_sim_scenario_4_missingness_method_indicator_encoding_FULL_results.csv", row.names = 1)
-scenario_4_MNAR_data <- read.csv("data/missingness_sim_scenario_4_missingness_method_indicator_encoding_MNAR_results.csv", row.names = 1)
-scenario_4_MCAR_data <- read.csv("data/missingness_sim_scenario_4_missingness_method_indicator_encoding_MCAR_results.csv", row.names = 1)
+scenario_4_FULL_data        <- read.csv("data/missingness_sim_scenario_4_missingness_method_indicator_encoding_FULL_results.csv", row.names = 1)
+scenario_4_MNAR_data        <- read.csv("data/missingness_sim_scenario_4_missingness_method_indicator_encoding_MNAR_results.csv", row.names = 1)
+scenario_4_MCAR_data        <- read.csv("data/missingness_sim_scenario_4_missingness_method_indicator_encoding_MCAR_results.csv", row.names = 1)
+scenario_4_sample_size_data <- read.csv("data/missingness_sim_scenario_4_missingness_method_indicator_encoding_sample_size_table.csv",  row.names = 1)
 
-scenario_5_FULL_data <- read.csv("data/missingness_sim_scenario_5_missingness_method_dichotomize_FULL_results.csv", row.names = 1)
-scenario_5_MNAR_data <- read.csv("data/missingness_sim_scenario_5_missingness_method_dichotomize_MNAR_results.csv", row.names = 1)
-scenario_5_MCAR_data <- read.csv("data/missingness_sim_scenario_5_missingness_method_dichotomize_MCAR_results.csv", row.names = 1)
+scenario_5_FULL_data        <- read.csv("data/missingness_sim_scenario_5_missingness_method_dichotomize_FULL_results.csv", row.names = 1)
+scenario_5_MNAR_data        <- read.csv("data/missingness_sim_scenario_5_missingness_method_dichotomize_MNAR_results.csv", row.names = 1)
+scenario_5_MCAR_data        <- read.csv("data/missingness_sim_scenario_5_missingness_method_dichotomize_MCAR_results.csv", row.names = 1)
+scenario_5_sample_size_data <- read.csv("data/missingness_sim_scenario_5_missingness_method_dichotomize_sample_size_table.csv",  row.names = 1)
 
 
 
 # ----- Generate scenario_1 Tables -----
+
+sample_size_before <- get(  "scenario_1_sample_size_data")[, "complete_cases"] %>% as.integer()
+sample_size_after  <- get(  "scenario_1_sample_size_data")[, "sample_size_after_handling"] %>% as.integer()
 
 
 # causal effect estimation table
@@ -133,6 +146,8 @@ for (i in 1:length(missingness_mechanisms)) {
 
 scenario_1_causal_estimation_table_first_half <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   fully_adjusted_bias,
   fully_adjusted_bias_percentage,
   fully_adjusted_coverage,
@@ -146,6 +161,8 @@ scenario_1_causal_estimation_table_first_half <- data.frame(
 
 scenario_1_causal_estimation_table_second_half <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   two_step_lasso_X_bias,
   two_step_lasso_X_bias_percentage,
   two_step_lasso_X_coverage,
@@ -213,6 +230,8 @@ for (i in 1:length(missingness_mechanisms)) {
 
 scenario_1_backdoor_pathways <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   open_backdoor_paths,
   fully_adjusted_blocked,
   fully_adjusted_blocked_percentage,
@@ -231,6 +250,9 @@ print(scenario_1_backdoor_pathways)
 
 
 # ----- Generate scenario_2 Tables -----
+
+sample_size_before <- get(  "scenario_2_sample_size_data")[, "complete_cases"] %>% as.integer()
+sample_size_after  <- get(  "scenario_2_sample_size_data")[, "sample_size_after_handling"] %>% as.integer()
 
 
 # causal effect estimation table
@@ -312,6 +334,8 @@ for (i in 1:length(missingness_mechanisms)) {
 
 scenario_2_causal_estimation_table_first_half <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   fully_adjusted_bias,
   fully_adjusted_bias_percentage,
   fully_adjusted_coverage,
@@ -325,6 +349,8 @@ scenario_2_causal_estimation_table_first_half <- data.frame(
 
 scenario_2_causal_estimation_table_second_half <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   two_step_lasso_X_bias,
   two_step_lasso_X_bias_percentage,
   two_step_lasso_X_coverage,
@@ -392,6 +418,8 @@ for (i in 1:length(missingness_mechanisms)) {
 
 scenario_2_backdoor_pathways <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   open_backdoor_paths,
   fully_adjusted_blocked,
   fully_adjusted_blocked_percentage,
@@ -410,6 +438,9 @@ print(scenario_2_backdoor_pathways)
 
 
 # ----- Generate scenario_3 Tables -----
+
+sample_size_before <- get(  "scenario_3_sample_size_data")[, "complete_cases"] %>% as.integer()
+sample_size_after  <- get(  "scenario_3_sample_size_data")[, "sample_size_after_handling"] %>% as.integer()
 
 
 # causal effect estimation table
@@ -491,6 +522,8 @@ for (i in 1:length(missingness_mechanisms)) {
 
 scenario_3_causal_estimation_table_first_half <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   fully_adjusted_bias,
   fully_adjusted_bias_percentage,
   fully_adjusted_coverage,
@@ -504,6 +537,8 @@ scenario_3_causal_estimation_table_first_half <- data.frame(
 
 scenario_3_causal_estimation_table_second_half <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   two_step_lasso_X_bias,
   two_step_lasso_X_bias_percentage,
   two_step_lasso_X_coverage,
@@ -571,6 +606,8 @@ for (i in 1:length(missingness_mechanisms)) {
 
 scenario_3_backdoor_pathways <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   open_backdoor_paths,
   fully_adjusted_blocked,
   fully_adjusted_blocked_percentage,
@@ -589,6 +626,9 @@ print(scenario_3_backdoor_pathways)
 
 
 # ----- Generate scenario_4 Tables -----
+
+sample_size_before <- get(  "scenario_4_sample_size_data")[, "complete_cases"] %>% as.integer()
+sample_size_after  <- get(  "scenario_4_sample_size_data")[, "sample_size_after_handling"] %>% as.integer()
 
 
 # causal effect estimation table
@@ -670,6 +710,8 @@ for (i in 1:length(missingness_mechanisms)) {
 
 scenario_4_causal_estimation_table_first_half <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   fully_adjusted_bias,
   fully_adjusted_bias_percentage,
   fully_adjusted_coverage,
@@ -683,6 +725,8 @@ scenario_4_causal_estimation_table_first_half <- data.frame(
 
 scenario_4_causal_estimation_table_second_half <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   two_step_lasso_X_bias,
   two_step_lasso_X_bias_percentage,
   two_step_lasso_X_coverage,
@@ -750,6 +794,8 @@ for (i in 1:length(missingness_mechanisms)) {
 
 scenario_4_backdoor_pathways <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   open_backdoor_paths,
   fully_adjusted_blocked,
   fully_adjusted_blocked_percentage,
@@ -767,6 +813,9 @@ print(scenario_4_backdoor_pathways)
 
 
 # ----- Generate scenario_5 Tables -----
+
+sample_size_before <- get(  "scenario_5_sample_size_data")[, "complete_cases"] %>% as.integer()
+sample_size_after  <- get(  "scenario_5_sample_size_data")[, "sample_size_after_handling"] %>% as.integer()
 
 
 # causal effect estimation table
@@ -848,6 +897,8 @@ for (i in 1:length(missingness_mechanisms)) {
 
 scenario_5_causal_estimation_table_first_half <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   fully_adjusted_bias,
   fully_adjusted_bias_percentage,
   fully_adjusted_coverage,
@@ -861,6 +912,8 @@ scenario_5_causal_estimation_table_first_half <- data.frame(
 
 scenario_5_causal_estimation_table_second_half <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   two_step_lasso_X_bias,
   two_step_lasso_X_bias_percentage,
   two_step_lasso_X_coverage,
@@ -928,6 +981,8 @@ for (i in 1:length(missingness_mechanisms)) {
 
 scenario_5_backdoor_pathways <- data.frame(
   missingness_mechanisms,
+  sample_size_before,
+  sample_size_after,
   open_backdoor_paths,
   fully_adjusted_blocked,
   fully_adjusted_blocked_percentage,
@@ -945,25 +1000,77 @@ print(scenario_5_backdoor_pathways)
 
 
 
+# ----- Rounding to 6 s.f. -----
+
+scenario_1_causal_estimation_table_first_half[, -c(1)]  <- signif(scenario_1_causal_estimation_table_first_half[, -c(1)],  6)
+scenario_1_causal_estimation_table_second_half[, -c(1)] <- signif(scenario_1_causal_estimation_table_second_half[, -c(1)], 6)
+scenario_1_backdoor_pathways[, -c(1)]                   <- signif(scenario_1_backdoor_pathways[, -c(1)],                   6)
+
+scenario_2_causal_estimation_table_first_half[, -c(1)]  <- signif(scenario_2_causal_estimation_table_first_half[, -c(1)],  6)
+scenario_2_causal_estimation_table_second_half[, -c(1)] <- signif(scenario_2_causal_estimation_table_second_half[, -c(1)], 6)
+scenario_2_backdoor_pathways[, -c(1)]                   <- signif(scenario_2_backdoor_pathways[, -c(1)],                   6)
+
+scenario_3_causal_estimation_table_first_half[, -c(1)]  <- signif(scenario_3_causal_estimation_table_first_half[, -c(1)],  6)
+scenario_3_causal_estimation_table_second_half[, -c(1)] <- signif(scenario_3_causal_estimation_table_second_half[, -c(1)], 6)
+scenario_3_backdoor_pathways[, -c(1)]                   <- signif(scenario_3_backdoor_pathways[, -c(1)],                   6)
+
+scenario_4_causal_estimation_table_first_half[, -c(1)]  <- signif(scenario_4_causal_estimation_table_first_half[, -c(1)],  6)
+scenario_4_causal_estimation_table_second_half[, -c(1)] <- signif(scenario_4_causal_estimation_table_second_half[, -c(1)], 6)
+scenario_4_backdoor_pathways[, -c(1)]                   <- signif(scenario_4_backdoor_pathways[, -c(1)],                   6)
+
+scenario_5_causal_estimation_table_first_half[, -c(1)]  <- signif(scenario_5_causal_estimation_table_first_half[, -c(1)],  6)
+scenario_5_causal_estimation_table_second_half[, -c(1)] <- signif(scenario_5_causal_estimation_table_second_half[, -c(1)], 6)
+scenario_5_backdoor_pathways[, -c(1)]                   <- signif(scenario_5_backdoor_pathways[, -c(1)],                   6)
+
+
+
+# # ----- Convert to character to preserve format -----
+# 
+# scenario_1_causal_estimation_table_first_half  <- (scenario_1_causal_estimation_table_first_half  %>% dplyr::mutate_all(as.character))
+# scenario_1_causal_estimation_table_second_half <- (scenario_1_causal_estimation_table_second_half %>% dplyr::mutate_all(as.character))
+# scenario_1_backdoor_pathways                   <- (scenario_1_backdoor_pathways                   %>% dplyr::mutate_all(as.character))
+# 
+# scenario_2_causal_estimation_table_first_half  <- (scenario_2_causal_estimation_table_first_half  %>% dplyr::mutate_all(as.character))
+# scenario_2_causal_estimation_table_second_half <- (scenario_2_causal_estimation_table_second_half %>% dplyr::mutate_all(as.character))
+# scenario_2_backdoor_pathways                   <- (scenario_2_backdoor_pathways                   %>% dplyr::mutate_all(as.character))
+# 
+# scenario_3_causal_estimation_table_first_half  <- (scenario_3_causal_estimation_table_first_half  %>% dplyr::mutate_all(as.character))
+# scenario_3_causal_estimation_table_second_half <- (scenario_3_causal_estimation_table_second_half %>% dplyr::mutate_all(as.character))
+# scenario_3_backdoor_pathways                   <- (scenario_3_backdoor_pathways                   %>% dplyr::mutate_all(as.character))
+# 
+# scenario_4_causal_estimation_table_first_half  <- (scenario_4_causal_estimation_table_first_half  %>% dplyr::mutate_all(as.character))
+# scenario_4_causal_estimation_table_second_half <- (scenario_4_causal_estimation_table_second_half %>% dplyr::mutate_all(as.character))
+# scenario_4_backdoor_pathways                   <- (scenario_4_backdoor_pathways                   %>% dplyr::mutate_all(as.character))
+# 
+# scenario_5_causal_estimation_table_first_half  <- (scenario_5_causal_estimation_table_first_half  %>% dplyr::mutate_all(as.character))
+# scenario_5_causal_estimation_table_second_half <- (scenario_5_causal_estimation_table_second_half %>% dplyr::mutate_all(as.character))
+# scenario_5_backdoor_pathways                   <- (scenario_5_backdoor_pathways                   %>% dplyr::mutate_all(as.character))
+
+
+
 # ----- Save results -----
 
 write.csv(scenario_1_causal_estimation_table_first_half,  "temp/scenario_1_causal_estimation_first_half.csv",  row.names = FALSE)
 write.csv(scenario_1_causal_estimation_table_second_half, "temp/scenario_1_causal_estimation_second_half.csv", row.names = FALSE)
-write.csv(scenario_1_backdoor_pathways,             "temp/scenario_1_backdoor_pathways.csv",       row.names = FALSE)
+write.csv(scenario_1_backdoor_pathways,                   "temp/scenario_1_backdoor_pathways.csv",             row.names = FALSE)
 
 write.csv(scenario_2_causal_estimation_table_first_half,  "temp/scenario_2_causal_estimation_first_half.csv",  row.names = FALSE)
 write.csv(scenario_2_causal_estimation_table_second_half, "temp/scenario_2_causal_estimation_second_half.csv", row.names = FALSE)
-write.csv(scenario_2_backdoor_pathways,             "temp/scenario_2_backdoor_pathways.csv",       row.names = FALSE)
+write.csv(scenario_2_backdoor_pathways,                   "temp/scenario_2_backdoor_pathways.csv",             row.names = FALSE)
 
 write.csv(scenario_3_causal_estimation_table_first_half,  "temp/scenario_3_causal_estimation_first_half.csv",  row.names = FALSE)
 write.csv(scenario_3_causal_estimation_table_second_half, "temp/scenario_3_causal_estimation_second_half.csv", row.names = FALSE)
-write.csv(scenario_3_backdoor_pathways,             "temp/scenario_3_backdoor_pathways.csv",       row.names = FALSE)
+write.csv(scenario_3_backdoor_pathways,                   "temp/scenario_3_backdoor_pathways.csv",             row.names = FALSE)
 
 write.csv(scenario_4_causal_estimation_table_first_half,  "temp/scenario_4_causal_estimation_first_half.csv",  row.names = FALSE)
 write.csv(scenario_4_causal_estimation_table_second_half, "temp/scenario_4_causal_estimation_second_half.csv", row.names = FALSE)
-write.csv(scenario_4_backdoor_pathways,             "temp/scenario_4_backdoor_pathways.csv",       row.names = FALSE)
+write.csv(scenario_4_backdoor_pathways,                   "temp/scenario_4_backdoor_pathways.csv",             row.names = FALSE)
 
 write.csv(scenario_5_causal_estimation_table_first_half,  "temp/scenario_5_causal_estimation_first_half.csv",  row.names = FALSE)
 write.csv(scenario_5_causal_estimation_table_second_half, "temp/scenario_5_causal_estimation_second_half.csv", row.names = FALSE)
-write.csv(scenario_5_backdoor_pathways,             "temp/scenario_5_backdoor_pathways.csv",       row.names = FALSE)
+write.csv(scenario_5_backdoor_pathways,                   "temp/scenario_5_backdoor_pathways.csv",             row.names = FALSE)
+
+
+# reset scientific notation
+options(scipen=0)
 
