@@ -1,4 +1,4 @@
 "missingness_mechanisms","sample_size_before","sample_size_after","fully_adjusted_bias","fully_adjusted_bias_percentage","fully_adjusted_coverage","unadjusted_bias","unadjusted_bias_percentage","unadjusted_coverage","two_step_lasso_bias","two_step_lasso_bias_percentage","two_step_lasso_coverage"
 "FULL",100000,100000,0.0872693,0.174539,0,1.16454,2.32909,0,0.0872693,0.174539,0
 "MNAR",25657,100000,0.0924979,0.184996,0,1.16454,2.32909,0,0.0924979,0.184996,0
-"MCAR",25840,100000,0.0922484,0.184497,0,1.16454,2.32909,0,0.0922484,0.184497,0
+"MCAR",79665,100000,0.0907844,0.181569,0,1.16454,2.32909,0,0.0907844,0.181569,0

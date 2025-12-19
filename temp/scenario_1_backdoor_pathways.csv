@@ -1,4 +1,4 @@
 "missingness_mechanisms","sample_size_before","sample_size_after","open_backdoor_paths","fully_adjusted_blocked","fully_adjusted_blocked_percentage","unadjusted_blocked","unadjusted_blocked_percentage","two_step_lasso_blocked","two_step_lasso_blocked_percentage","two_step_lasso_X_blocked","two_step_lasso_X_blocked_percentage","two_step_lasso_union_blocked","two_step_lasso_union_blocked_percentage"
 "FULL",100000,100000,32,28,0.875,0,0,28,0.875,28,0.875,28,0.875
 "MNAR",25727,25727,32,28,0.875,0,0,28,0.875,28,0.875,28,0.875
-"MCAR",25931,25931,32,28,0.875,0,0,28,0.875,28,0.875,28,0.875
+"MCAR",80017,80017,32,28,0.875,0,0,28,0.875,28,0.875,28,0.875
