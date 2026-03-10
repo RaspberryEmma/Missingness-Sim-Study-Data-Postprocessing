@@ -1,0 +1,11 @@
+"","x"
+"Z on X (Subgroup Low X, Low Y)",0.01715
+"Z on X (Subgroup Low X, High Y)",0.01715
+"Z on X (Subgroup High X, Low Y)",0.0686
+"Z on X (Subgroup High X, High Y)",0.0686
+"Z on Y (Subgroup Low X, Low Y)",0.01715
+"Z on Y (Subgroup Low X, High Y)",0.0686
+"Z on Y (Subgroup High X, Low Y)",0.01715
+"Z on Y (Subgroup High X, High Y)",0.0686
+"Causal effect X on Y",0.5
+"Var in error for Y",3.18
