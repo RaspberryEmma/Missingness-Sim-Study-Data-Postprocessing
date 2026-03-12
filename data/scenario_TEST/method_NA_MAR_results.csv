@@ -1,0 +1,6 @@
+"","causal_true_value","causal_estimate","causal_bias","causal_bias_proportion","causal_coverage","open_paths","blocked_paths","proportion_paths","empirical_SE","model_SE"
+"fully_adjusted",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"unadjusted",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"two_step_lasso",0.5,0.533535296289478,0.0335352962894784,0.0670705925789569,NA,32,21,0.65625,0.040399229513572,0.0569972958833818
+"two_step_lasso_X",0.5,0.534754710930539,0.0347547109305388,0.0695094218610776,NA,32,22.5,0.703125,0.0436231445545386,0.0583995091926927
+"two_step_lasso_union",0.5,0.535338538703395,0.0353385387033949,0.0706770774067897,NA,32,27,0.84375,0.0429531791677666,0.0581067197766299

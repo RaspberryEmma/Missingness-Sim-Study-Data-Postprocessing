@@ -38,9 +38,9 @@ scenario_1_MAR_data   <- read.csv("data/scenario_1/method_CCA_MAR_results.csv", 
 scenario_1_MCAR_data  <- read.csv("data/scenario_1/method_CCA_MCAR_results.csv", row.names = 1)
 scenario_1_MNAR_data  <- read.csv("data/scenario_1/method_CCA_MNAR_results.csv", row.names = 1)
 
-# scenario_2_MAR_data   <- read.csv("data/scenario_2/method_within_MI_MAR_results.csv", row.names = 1)
-# scenario_2_MCAR_data  <- read.csv("data/scenario_2/method_within_MI_MCAR_results.csv", row.names = 1)
-# scenario_2_MNAR_data  <- read.csv("data/scenario_2/method_within_MI_MNAR_results.csv", row.names = 1)
+scenario_2_MAR_data   <- read.csv("data/scenario_2/method_within_MI_MAR_results.csv", row.names = 1)
+scenario_2_MCAR_data  <- read.csv("data/scenario_2/method_within_MI_MCAR_results.csv", row.names = 1)
+scenario_2_MNAR_data  <- read.csv("data/scenario_2/method_within_MI_MNAR_results.csv", row.names = 1)
 
 scenario_3_MAR_data   <- read.csv("data/scenario_3/method_across_MI_MAR_results.csv", row.names = 1)
 scenario_3_MCAR_data  <- read.csv("data/scenario_3/method_across_MI_MCAR_results.csv", row.names = 1)
