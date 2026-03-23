@@ -8,7 +8,7 @@
 # Emma Tarmey
 #
 # Started:          15/12/2025
-# Most Recent Edit: 18/12/2025
+# Most Recent Edit: 23/03/2026
 # ****************************************
 
 
@@ -65,217 +65,217 @@ MAR_variable_selection_methods   <- c(rep("Fully-adjusted", times = 5),
 MAR_missingness_handling_methods <- rep(c("CCA", "Within-MI", "Across-MI", "Indicator-encoding", "Dichotomizing"), times = 5)
 
 MAR_causal_estimate <- c(scenario_1_MAR_data["fully_adjusted", "causal_estimate"],
-                         NaN,
+                         scenario_2_MAR_data["fully_adjusted", "causal_estimate"],
                          scenario_3_MAR_data["fully_adjusted", "causal_estimate"],
                          scenario_4_MAR_data["fully_adjusted", "causal_estimate"],
                          scenario_5_MAR_data["fully_adjusted", "causal_estimate"],
                          
                          scenario_1_MAR_data["unadjusted", "causal_estimate"],
-                         NaN,
+                         scenario_2_MAR_data["unadjusted", "causal_estimate"],
                          scenario_3_MAR_data["unadjusted", "causal_estimate"],
                          scenario_4_MAR_data["unadjusted", "causal_estimate"],
                          scenario_5_MAR_data["unadjusted", "causal_estimate"],
                          
                          scenario_1_MAR_data["two_step_lasso", "causal_estimate"],
-                         NaN,
+                         scenario_2_MAR_data["two_step_lasso", "causal_estimate"],
                          scenario_3_MAR_data["two_step_lasso", "causal_estimate"],
                          scenario_4_MAR_data["two_step_lasso", "causal_estimate"],
                          scenario_5_MAR_data["two_step_lasso", "causal_estimate"],
                          
                          scenario_1_MAR_data["two_step_lasso_X", "causal_estimate"],
-                         NaN,
+                         scenario_2_MAR_data["two_step_lasso_X", "causal_estimate"],
                          scenario_3_MAR_data["two_step_lasso_X", "causal_estimate"],
                          scenario_4_MAR_data["two_step_lasso_X", "causal_estimate"],
                          scenario_5_MAR_data["two_step_lasso_X", "causal_estimate"],
                          
                          scenario_1_MAR_data["two_step_lasso_union", "causal_estimate"],
-                         NaN,
+                         scenario_2_MAR_data["two_step_lasso_union", "causal_estimate"],
                          scenario_3_MAR_data["two_step_lasso_union", "causal_estimate"],
                          scenario_4_MAR_data["two_step_lasso_union", "causal_estimate"],
                          scenario_5_MAR_data["two_step_lasso_union", "causal_estimate"]
                         ) %>% as.numeric()
 
 MAR_bias               <- c(scenario_1_MAR_data["fully_adjusted", "causal_bias"],
-                            NaN,
+                            scenario_2_MAR_data["fully_adjusted", "causal_bias"],
                             scenario_3_MAR_data["fully_adjusted", "causal_bias"],
                             scenario_4_MAR_data["fully_adjusted", "causal_bias"],
                             scenario_5_MAR_data["fully_adjusted", "causal_bias"],
                             
                             scenario_1_MAR_data["unadjusted", "causal_bias"],
-                            NaN,
+                            scenario_2_MAR_data["unadjusted", "causal_bias"],
                             scenario_3_MAR_data["unadjusted", "causal_bias"],
                             scenario_4_MAR_data["unadjusted", "causal_bias"],
                             scenario_5_MAR_data["unadjusted", "causal_bias"],
                             
                             scenario_1_MAR_data["two_step_lasso", "causal_bias"],
-                            NaN,
+                            scenario_2_MAR_data["two_step_lasso", "causal_bias"],
                             scenario_3_MAR_data["two_step_lasso", "causal_bias"],
                             scenario_4_MAR_data["two_step_lasso", "causal_bias"],
                             scenario_5_MAR_data["two_step_lasso", "causal_bias"],
                             
                             scenario_1_MAR_data["two_step_lasso_X", "causal_bias"],
-                            NaN,
+                            scenario_2_MAR_data["two_step_lasso_X", "causal_bias"],
                             scenario_3_MAR_data["two_step_lasso_X", "causal_bias"],
                             scenario_4_MAR_data["two_step_lasso_X", "causal_bias"],
                             scenario_5_MAR_data["two_step_lasso_X", "causal_bias"],
                             
                             scenario_1_MAR_data["two_step_lasso_union", "causal_bias"],
-                            NaN,
+                            scenario_2_MAR_data["two_step_lasso_union", "causal_bias"],
                             scenario_3_MAR_data["two_step_lasso_union", "causal_bias"],
                             scenario_4_MAR_data["two_step_lasso_union", "causal_bias"],
                             scenario_5_MAR_data["two_step_lasso_union", "causal_bias"]
                             ) %>% as.numeric()
 
 MAR_bias_as_proportion <- c(scenario_1_MAR_data["fully_adjusted", "causal_bias_proportion"],
-                            NaN,
+                            scenario_2_MAR_data["fully_adjusted", "causal_bias_proportion"],
                             scenario_3_MAR_data["fully_adjusted", "causal_bias_proportion"],
                             scenario_4_MAR_data["fully_adjusted", "causal_bias_proportion"],
                             scenario_5_MAR_data["fully_adjusted", "causal_bias_proportion"],
                             
                             scenario_1_MAR_data["unadjusted", "causal_bias_proportion"],
-                            NaN,
+                            scenario_2_MAR_data["unadjusted", "causal_bias_proportion"],
                             scenario_3_MAR_data["unadjusted", "causal_bias_proportion"],
                             scenario_4_MAR_data["unadjusted", "causal_bias_proportion"],
                             scenario_5_MAR_data["unadjusted", "causal_bias_proportion"],
                             
                             scenario_1_MAR_data["two_step_lasso", "causal_bias_proportion"],
-                            NaN,
+                            scenario_2_MAR_data["two_step_lasso", "causal_bias_proportion"],
                             scenario_3_MAR_data["two_step_lasso", "causal_bias_proportion"],
                             scenario_4_MAR_data["two_step_lasso", "causal_bias_proportion"],
                             scenario_5_MAR_data["two_step_lasso", "causal_bias_proportion"],
                             
                             scenario_1_MAR_data["two_step_lasso_X", "causal_bias_proportion"],
-                            NaN,
+                            scenario_2_MAR_data["two_step_lasso_X", "causal_bias_proportion"],
                             scenario_3_MAR_data["two_step_lasso_X", "causal_bias_proportion"],
                             scenario_4_MAR_data["two_step_lasso_X", "causal_bias_proportion"],
                             scenario_5_MAR_data["two_step_lasso_X", "causal_bias_proportion"],
                             
                             scenario_1_MAR_data["two_step_lasso_union", "causal_bias_proportion"],
-                            NaN,
+                            scenario_2_MAR_data["two_step_lasso_union", "causal_bias_proportion"],
                             scenario_3_MAR_data["two_step_lasso_union", "causal_bias_proportion"],
                             scenario_4_MAR_data["two_step_lasso_union", "causal_bias_proportion"],
                             scenario_5_MAR_data["two_step_lasso_union", "causal_bias_proportion"]
                             ) %>% as.numeric()
 
 MAR_coverage           <- c(scenario_1_MAR_data["fully_adjusted", "causal_coverage"],
-                            NaN,
+                            scenario_2_MAR_data["fully_adjusted", "causal_coverage"],
                             scenario_3_MAR_data["fully_adjusted", "causal_coverage"],
                             scenario_4_MAR_data["fully_adjusted", "causal_coverage"],
                             scenario_5_MAR_data["fully_adjusted", "causal_coverage"],
                             
                             scenario_1_MAR_data["unadjusted", "causal_coverage"],
-                            NaN,
+                            scenario_2_MAR_data["unadjusted", "causal_coverage"],
                             scenario_3_MAR_data["unadjusted", "causal_coverage"],
                             scenario_4_MAR_data["unadjusted", "causal_coverage"],
                             scenario_5_MAR_data["unadjusted", "causal_coverage"],
                             
                             scenario_1_MAR_data["two_step_lasso", "causal_coverage"],
-                            NaN,
+                            scenario_2_MAR_data["two_step_lasso", "causal_coverage"],
                             scenario_3_MAR_data["two_step_lasso", "causal_coverage"],
                             scenario_4_MAR_data["two_step_lasso", "causal_coverage"],
                             scenario_5_MAR_data["two_step_lasso", "causal_coverage"],
                             
                             scenario_1_MAR_data["two_step_lasso_X", "causal_coverage"],
-                            NaN,
+                            scenario_2_MAR_data["two_step_lasso_X", "causal_coverage"],
                             scenario_3_MAR_data["two_step_lasso_X", "causal_coverage"],
                             scenario_4_MAR_data["two_step_lasso_X", "causal_coverage"],
                             scenario_5_MAR_data["two_step_lasso_X", "causal_coverage"],
                             
                             scenario_1_MAR_data["two_step_lasso_union", "causal_coverage"],
-                            NaN,
+                            scenario_2_MAR_data["two_step_lasso_union", "causal_coverage"],
                             scenario_3_MAR_data["two_step_lasso_union", "causal_coverage"],
                             scenario_4_MAR_data["two_step_lasso_union", "causal_coverage"],
                             scenario_5_MAR_data["two_step_lasso_union", "causal_coverage"]
                             ) %>% as.numeric()
 
 MAR_blocked_paths <- c(scenario_1_MAR_data["fully_adjusted", "blocked_paths"],
-                       NaN,
+                       scenario_2_MAR_data["fully_adjusted", "blocked_paths"],
                        scenario_3_MAR_data["fully_adjusted", "blocked_paths"],
                        scenario_4_MAR_data["fully_adjusted", "blocked_paths"],
                        scenario_5_MAR_data["fully_adjusted", "blocked_paths"],
                        
                        scenario_1_MAR_data["unadjusted", "blocked_paths"],
-                       NaN,
+                       scenario_2_MAR_data["unadjusted", "blocked_paths"],
                        scenario_3_MAR_data["unadjusted", "blocked_paths"],
                        scenario_4_MAR_data["unadjusted", "blocked_paths"],
                        scenario_5_MAR_data["unadjusted", "blocked_paths"],
                        
                        scenario_1_MAR_data["two_step_lasso", "blocked_paths"],
-                       NaN,
+                       scenario_2_MAR_data["two_step_lasso", "blocked_paths"],
                        scenario_3_MAR_data["two_step_lasso", "blocked_paths"],
                        scenario_4_MAR_data["two_step_lasso", "blocked_paths"],
                        scenario_5_MAR_data["two_step_lasso", "blocked_paths"],
                        
                        scenario_1_MAR_data["two_step_lasso_X", "blocked_paths"],
-                       NaN,
+                       scenario_2_MAR_data["two_step_lasso_X", "blocked_paths"],
                        scenario_3_MAR_data["two_step_lasso_X", "blocked_paths"],
                        scenario_4_MAR_data["two_step_lasso_X", "blocked_paths"],
                        scenario_5_MAR_data["two_step_lasso_X", "blocked_paths"],
                        
                        scenario_1_MAR_data["two_step_lasso_union", "blocked_paths"],
-                       NaN,
+                       scenario_2_MAR_data["two_step_lasso_union", "blocked_paths"],
                        scenario_3_MAR_data["two_step_lasso_union", "blocked_paths"],
                        scenario_4_MAR_data["two_step_lasso_union", "blocked_paths"],
                        scenario_5_MAR_data["two_step_lasso_union", "blocked_paths"]
                       ) %>% as.numeric()
 
 MAR_proportion_paths <- c(scenario_1_MAR_data["fully_adjusted", "proportion_paths"],
-                          NaN,
+                          scenario_2_MAR_data["fully_adjusted", "proportion_paths"],
                           scenario_3_MAR_data["fully_adjusted", "proportion_paths"],
                           scenario_4_MAR_data["fully_adjusted", "proportion_paths"],
                           scenario_5_MAR_data["fully_adjusted", "proportion_paths"],
                           
                           scenario_1_MAR_data["unadjusted", "proportion_paths"],
-                          NaN,
+                          scenario_2_MAR_data["unadjusted", "proportion_paths"],
                           scenario_3_MAR_data["unadjusted", "proportion_paths"],
                           scenario_4_MAR_data["unadjusted", "proportion_paths"],
                           scenario_5_MAR_data["unadjusted", "proportion_paths"],
                           
                           scenario_1_MAR_data["two_step_lasso", "proportion_paths"],
-                          NaN,
+                          scenario_2_MAR_data["two_step_lasso", "proportion_paths"],
                           scenario_3_MAR_data["two_step_lasso", "proportion_paths"],
                           scenario_4_MAR_data["two_step_lasso", "proportion_paths"],
                           scenario_5_MAR_data["two_step_lasso", "proportion_paths"],
                           
                           scenario_1_MAR_data["two_step_lasso_X", "proportion_paths"],
-                          NaN,
+                          scenario_2_MAR_data["two_step_lasso_X", "proportion_paths"],
                           scenario_3_MAR_data["two_step_lasso_X", "proportion_paths"],
                           scenario_4_MAR_data["two_step_lasso_X", "proportion_paths"],
                           scenario_5_MAR_data["two_step_lasso_X", "proportion_paths"],
                           
                           scenario_1_MAR_data["two_step_lasso_union", "proportion_paths"],
-                          NaN,
+                          scenario_2_MAR_data["two_step_lasso_union", "proportion_paths"],
                           scenario_3_MAR_data["two_step_lasso_union", "proportion_paths"],
                           scenario_4_MAR_data["two_step_lasso_union", "proportion_paths"],
                           scenario_5_MAR_data["two_step_lasso_union", "proportion_paths"]
                           ) %>% as.numeric()
 
 MAR_empirical_SE <- c(scenario_1_MAR_data["fully_adjusted", "empirical_SE"],
-                      NaN,
+                      scenario_2_MAR_data["fully_adjusted", "empirical_SE"],
                       scenario_3_MAR_data["fully_adjusted", "empirical_SE"],
                       scenario_4_MAR_data["fully_adjusted", "empirical_SE"],
                       scenario_5_MAR_data["fully_adjusted", "empirical_SE"],
                       
                       scenario_1_MAR_data["unadjusted", "empirical_SE"],
-                      NaN,
+                      scenario_2_MAR_data["unadjusted", "empirical_SE"],
                       scenario_3_MAR_data["unadjusted", "empirical_SE"],
                       scenario_4_MAR_data["unadjusted", "empirical_SE"],
                       scenario_5_MAR_data["unadjusted", "empirical_SE"],
                       
                       scenario_1_MAR_data["two_step_lasso", "empirical_SE"],
-                      NaN,
+                      scenario_2_MAR_data["two_step_lasso", "empirical_SE"],
                       scenario_3_MAR_data["two_step_lasso", "empirical_SE"],
                       scenario_4_MAR_data["two_step_lasso", "empirical_SE"],
                       scenario_5_MAR_data["two_step_lasso", "empirical_SE"],
                       
                       scenario_1_MAR_data["two_step_lasso_X", "empirical_SE"],
-                      NaN,
+                      scenario_2_MAR_data["two_step_lasso_X", "empirical_SE"],
                       scenario_3_MAR_data["two_step_lasso_X", "empirical_SE"],
                       scenario_4_MAR_data["two_step_lasso_X", "empirical_SE"],
                       scenario_5_MAR_data["two_step_lasso_X", "empirical_SE"],
                       
                       scenario_1_MAR_data["two_step_lasso_union", "empirical_SE"],
-                      NaN,
+                      scenario_2_MAR_data["two_step_lasso_union", "empirical_SE"],
                       scenario_3_MAR_data["two_step_lasso_union", "empirical_SE"],
                       scenario_4_MAR_data["two_step_lasso_union", "empirical_SE"],
                       scenario_5_MAR_data["two_step_lasso_union", "empirical_SE"]
@@ -312,217 +312,217 @@ MCAR_variable_selection_methods   <- c(rep("Fully-adjusted", times = 5),
 MCAR_missingness_handling_methods <- rep(c("CCA", "Within-MI", "Across-MI", "Indicator-encoding", "Dichotomizing"), times = 5)
 
 MCAR_causal_estimate <- c(scenario_1_MCAR_data["fully_adjusted", "causal_estimate"],
-                          NaN,
+                          scenario_2_MCAR_data["fully_adjusted", "causal_estimate"],
                           scenario_3_MCAR_data["fully_adjusted", "causal_estimate"],
                           scenario_4_MCAR_data["fully_adjusted", "causal_estimate"],
                           scenario_5_MCAR_data["fully_adjusted", "causal_estimate"],
                           
                           scenario_1_MCAR_data["unadjusted", "causal_estimate"],
-                          NaN,
+                          scenario_2_MCAR_data["unadjusted", "causal_estimate"],
                           scenario_3_MCAR_data["unadjusted", "causal_estimate"],
                           scenario_4_MCAR_data["unadjusted", "causal_estimate"],
                           scenario_5_MCAR_data["unadjusted", "causal_estimate"],
                           
                           scenario_1_MCAR_data["two_step_lasso", "causal_estimate"],
-                          NaN,
+                          scenario_2_MCAR_data["two_step_lasso", "causal_estimate"],
                           scenario_3_MCAR_data["two_step_lasso", "causal_estimate"],
                           scenario_4_MCAR_data["two_step_lasso", "causal_estimate"],
                           scenario_5_MCAR_data["two_step_lasso", "causal_estimate"],
                           
                           scenario_1_MCAR_data["two_step_lasso_X", "causal_estimate"],
-                          NaN,
+                          scenario_2_MCAR_data["two_step_lasso_X", "causal_estimate"],
                           scenario_3_MCAR_data["two_step_lasso_X", "causal_estimate"],
                           scenario_4_MCAR_data["two_step_lasso_X", "causal_estimate"],
                           scenario_5_MCAR_data["two_step_lasso_X", "causal_estimate"],
                           
                           scenario_1_MCAR_data["two_step_lasso_union", "causal_estimate"],
-                          NaN,
+                          scenario_2_MCAR_data["two_step_lasso_union", "causal_estimate"],
                           scenario_3_MCAR_data["two_step_lasso_union", "causal_estimate"],
                           scenario_4_MCAR_data["two_step_lasso_union", "causal_estimate"],
                           scenario_5_MCAR_data["two_step_lasso_union", "causal_estimate"]
 ) %>% as.numeric()
 
 MCAR_bias               <- c(scenario_1_MCAR_data["fully_adjusted", "causal_bias"],
-                             NaN,
+                             scenario_2_MCAR_data["fully_adjusted", "causal_bias"],
                              scenario_3_MCAR_data["fully_adjusted", "causal_bias"],
                              scenario_4_MCAR_data["fully_adjusted", "causal_bias"],
                              scenario_5_MCAR_data["fully_adjusted", "causal_bias"],
                              
                              scenario_1_MCAR_data["unadjusted", "causal_bias"],
-                             NaN,
+                             scenario_2_MCAR_data["unadjusted", "causal_bias"],
                              scenario_3_MCAR_data["unadjusted", "causal_bias"],
                              scenario_4_MCAR_data["unadjusted", "causal_bias"],
                              scenario_5_MCAR_data["unadjusted", "causal_bias"],
                              
                              scenario_1_MCAR_data["two_step_lasso", "causal_bias"],
-                             NaN,
+                             scenario_2_MCAR_data["two_step_lasso", "causal_bias"],
                              scenario_3_MCAR_data["two_step_lasso", "causal_bias"],
                              scenario_4_MCAR_data["two_step_lasso", "causal_bias"],
                              scenario_5_MCAR_data["two_step_lasso", "causal_bias"],
                              
                              scenario_1_MCAR_data["two_step_lasso_X", "causal_bias"],
-                             NaN,
+                             scenario_2_MCAR_data["two_step_lasso_X", "causal_bias"],
                              scenario_3_MCAR_data["two_step_lasso_X", "causal_bias"],
                              scenario_4_MCAR_data["two_step_lasso_X", "causal_bias"],
                              scenario_5_MCAR_data["two_step_lasso_X", "causal_bias"],
                              
                              scenario_1_MCAR_data["two_step_lasso_union", "causal_bias"],
-                             NaN,
+                             scenario_2_MCAR_data["two_step_lasso_union", "causal_bias"],
                              scenario_3_MCAR_data["two_step_lasso_union", "causal_bias"],
                              scenario_4_MCAR_data["two_step_lasso_union", "causal_bias"],
                              scenario_5_MCAR_data["two_step_lasso_union", "causal_bias"]
 ) %>% as.numeric()
 
 MCAR_bias_as_proportion <- c(scenario_1_MCAR_data["fully_adjusted", "causal_bias_proportion"],
-                             NaN,
+                             scenario_2_MCAR_data["fully_adjusted", "causal_bias_proportion"],
                              scenario_3_MCAR_data["fully_adjusted", "causal_bias_proportion"],
                              scenario_4_MCAR_data["fully_adjusted", "causal_bias_proportion"],
                              scenario_5_MCAR_data["fully_adjusted", "causal_bias_proportion"],
                              
                              scenario_1_MCAR_data["unadjusted", "causal_bias_proportion"],
-                             NaN,
+                             scenario_2_MCAR_data["unadjusted", "causal_bias_proportion"],
                              scenario_3_MCAR_data["unadjusted", "causal_bias_proportion"],
                              scenario_4_MCAR_data["unadjusted", "causal_bias_proportion"],
                              scenario_5_MCAR_data["unadjusted", "causal_bias_proportion"],
                              
                              scenario_1_MCAR_data["two_step_lasso", "causal_bias_proportion"],
-                             NaN,
+                             scenario_2_MCAR_data["two_step_lasso", "causal_bias_proportion"],
                              scenario_3_MCAR_data["two_step_lasso", "causal_bias_proportion"],
                              scenario_4_MCAR_data["two_step_lasso", "causal_bias_proportion"],
                              scenario_5_MCAR_data["two_step_lasso", "causal_bias_proportion"],
                              
                              scenario_1_MCAR_data["two_step_lasso_X", "causal_bias_proportion"],
-                             NaN,
+                             scenario_2_MCAR_data["two_step_lasso_X", "causal_bias_proportion"],
                              scenario_3_MCAR_data["two_step_lasso_X", "causal_bias_proportion"],
                              scenario_4_MCAR_data["two_step_lasso_X", "causal_bias_proportion"],
                              scenario_5_MCAR_data["two_step_lasso_X", "causal_bias_proportion"],
                              
                              scenario_1_MCAR_data["two_step_lasso_union", "causal_bias_proportion"],
-                             NaN,
+                             scenario_2_MCAR_data["two_step_lasso_union", "causal_bias_proportion"],
                              scenario_3_MCAR_data["two_step_lasso_union", "causal_bias_proportion"],
                              scenario_4_MCAR_data["two_step_lasso_union", "causal_bias_proportion"],
                              scenario_5_MCAR_data["two_step_lasso_union", "causal_bias_proportion"]
 ) %>% as.numeric()
 
 MCAR_coverage           <- c(scenario_1_MCAR_data["fully_adjusted", "causal_coverage"],
-                             NaN,
+                             scenario_2_MCAR_data["fully_adjusted", "causal_coverage"],
                              scenario_3_MCAR_data["fully_adjusted", "causal_coverage"],
                              scenario_4_MCAR_data["fully_adjusted", "causal_coverage"],
                              scenario_5_MCAR_data["fully_adjusted", "causal_coverage"],
                              
                              scenario_1_MCAR_data["unadjusted", "causal_coverage"],
-                             NaN,
+                             scenario_2_MCAR_data["unadjusted", "causal_coverage"],
                              scenario_3_MCAR_data["unadjusted", "causal_coverage"],
                              scenario_4_MCAR_data["unadjusted", "causal_coverage"],
                              scenario_5_MCAR_data["unadjusted", "causal_coverage"],
                              
                              scenario_1_MCAR_data["two_step_lasso", "causal_coverage"],
-                             NaN,
+                             scenario_2_MCAR_data["two_step_lasso", "causal_coverage"],
                              scenario_3_MCAR_data["two_step_lasso", "causal_coverage"],
                              scenario_4_MCAR_data["two_step_lasso", "causal_coverage"],
                              scenario_5_MCAR_data["two_step_lasso", "causal_coverage"],
                              
                              scenario_1_MCAR_data["two_step_lasso_X", "causal_coverage"],
-                             NaN,
+                             scenario_2_MCAR_data["two_step_lasso_X", "causal_coverage"],
                              scenario_3_MCAR_data["two_step_lasso_X", "causal_coverage"],
                              scenario_4_MCAR_data["two_step_lasso_X", "causal_coverage"],
                              scenario_5_MCAR_data["two_step_lasso_X", "causal_coverage"],
                              
                              scenario_1_MCAR_data["two_step_lasso_union", "causal_coverage"],
-                             NaN,
+                             scenario_2_MCAR_data["two_step_lasso_union", "causal_coverage"],
                              scenario_3_MCAR_data["two_step_lasso_union", "causal_coverage"],
                              scenario_4_MCAR_data["two_step_lasso_union", "causal_coverage"],
                              scenario_5_MCAR_data["two_step_lasso_union", "causal_coverage"]
 ) %>% as.numeric()
 
 MCAR_blocked_paths <- c(scenario_1_MCAR_data["fully_adjusted", "blocked_paths"],
-                        NaN,
+                        scenario_2_MCAR_data["fully_adjusted", "blocked_paths"],
                         scenario_3_MCAR_data["fully_adjusted", "blocked_paths"],
                         scenario_4_MCAR_data["fully_adjusted", "blocked_paths"],
                         scenario_5_MCAR_data["fully_adjusted", "blocked_paths"],
                         
                         scenario_1_MCAR_data["unadjusted", "blocked_paths"],
-                        NaN,
+                        scenario_2_MCAR_data["unadjusted", "blocked_paths"],
                         scenario_3_MCAR_data["unadjusted", "blocked_paths"],
                         scenario_4_MCAR_data["unadjusted", "blocked_paths"],
                         scenario_5_MCAR_data["unadjusted", "blocked_paths"],
                         
                         scenario_1_MCAR_data["two_step_lasso", "blocked_paths"],
-                        NaN,
+                        scenario_2_MCAR_data["two_step_lasso", "blocked_paths"],
                         scenario_3_MCAR_data["two_step_lasso", "blocked_paths"],
                         scenario_4_MCAR_data["two_step_lasso", "blocked_paths"],
                         scenario_5_MCAR_data["two_step_lasso", "blocked_paths"],
                         
                         scenario_1_MCAR_data["two_step_lasso_X", "blocked_paths"],
-                        NaN,
+                        scenario_2_MCAR_data["two_step_lasso_X", "blocked_paths"],
                         scenario_3_MCAR_data["two_step_lasso_X", "blocked_paths"],
                         scenario_4_MCAR_data["two_step_lasso_X", "blocked_paths"],
                         scenario_5_MCAR_data["two_step_lasso_X", "blocked_paths"],
                         
                         scenario_1_MCAR_data["two_step_lasso_union", "blocked_paths"],
-                        NaN,
+                        scenario_2_MCAR_data["two_step_lasso_union", "blocked_paths"],
                         scenario_3_MCAR_data["two_step_lasso_union", "blocked_paths"],
                         scenario_4_MCAR_data["two_step_lasso_union", "blocked_paths"],
                         scenario_5_MCAR_data["two_step_lasso_union", "blocked_paths"]
 ) %>% as.numeric()
 
 MCAR_proportion_paths <- c(scenario_1_MCAR_data["fully_adjusted", "proportion_paths"],
-                           NaN,
+                           scenario_2_MCAR_data["fully_adjusted", "proportion_paths"],
                            scenario_3_MCAR_data["fully_adjusted", "proportion_paths"],
                            scenario_4_MCAR_data["fully_adjusted", "proportion_paths"],
                            scenario_5_MCAR_data["fully_adjusted", "proportion_paths"],
                            
                            scenario_1_MCAR_data["unadjusted", "proportion_paths"],
-                           NaN,
+                           scenario_2_MCAR_data["unadjusted", "proportion_paths"],
                            scenario_3_MCAR_data["unadjusted", "proportion_paths"],
                            scenario_4_MCAR_data["unadjusted", "proportion_paths"],
                            scenario_5_MCAR_data["unadjusted", "proportion_paths"],
                            
                            scenario_1_MCAR_data["two_step_lasso", "proportion_paths"],
-                           NaN,
+                           scenario_2_MCAR_data["two_step_lasso", "proportion_paths"],
                            scenario_3_MCAR_data["two_step_lasso", "proportion_paths"],
                            scenario_4_MCAR_data["two_step_lasso", "proportion_paths"],
                            scenario_5_MCAR_data["two_step_lasso", "proportion_paths"],
                            
                            scenario_1_MCAR_data["two_step_lasso_X", "proportion_paths"],
-                           NaN,
+                           scenario_2_MCAR_data["two_step_lasso_X", "proportion_paths"],
                            scenario_3_MCAR_data["two_step_lasso_X", "proportion_paths"],
                            scenario_4_MCAR_data["two_step_lasso_X", "proportion_paths"],
                            scenario_5_MCAR_data["two_step_lasso_X", "proportion_paths"],
                            
                            scenario_1_MCAR_data["two_step_lasso_union", "proportion_paths"],
-                           NaN,
+                           scenario_2_MCAR_data["two_step_lasso_union", "proportion_paths"],
                            scenario_3_MCAR_data["two_step_lasso_union", "proportion_paths"],
                            scenario_4_MCAR_data["two_step_lasso_union", "proportion_paths"],
                            scenario_5_MCAR_data["two_step_lasso_union", "proportion_paths"]
 ) %>% as.numeric()
 
 MCAR_empirical_SE <- c(scenario_1_MCAR_data["fully_adjusted", "empirical_SE"],
-                       NaN,
+                       scenario_2_MCAR_data["fully_adjusted", "empirical_SE"],
                        scenario_3_MCAR_data["fully_adjusted", "empirical_SE"],
                        scenario_4_MCAR_data["fully_adjusted", "empirical_SE"],
                        scenario_5_MCAR_data["fully_adjusted", "empirical_SE"],
                        
                        scenario_1_MCAR_data["unadjusted", "empirical_SE"],
-                       NaN,
+                       scenario_2_MCAR_data["unadjusted", "empirical_SE"],
                        scenario_3_MCAR_data["unadjusted", "empirical_SE"],
                        scenario_4_MCAR_data["unadjusted", "empirical_SE"],
                        scenario_5_MCAR_data["unadjusted", "empirical_SE"],
                        
                        scenario_1_MCAR_data["two_step_lasso", "empirical_SE"],
-                       NaN,
+                       scenario_2_MCAR_data["two_step_lasso", "empirical_SE"],
                        scenario_3_MCAR_data["two_step_lasso", "empirical_SE"],
                        scenario_4_MCAR_data["two_step_lasso", "empirical_SE"],
                        scenario_5_MCAR_data["two_step_lasso", "empirical_SE"],
                        
                        scenario_1_MCAR_data["two_step_lasso_X", "empirical_SE"],
-                       NaN,
+                       scenario_2_MCAR_data["two_step_lasso_X", "empirical_SE"],
                        scenario_3_MCAR_data["two_step_lasso_X", "empirical_SE"],
                        scenario_4_MCAR_data["two_step_lasso_X", "empirical_SE"],
                        scenario_5_MCAR_data["two_step_lasso_X", "empirical_SE"],
                        
                        scenario_1_MCAR_data["two_step_lasso_union", "empirical_SE"],
-                       NaN,
+                       scenario_2_MCAR_data["two_step_lasso_union", "empirical_SE"],
                        scenario_3_MCAR_data["two_step_lasso_union", "empirical_SE"],
                        scenario_4_MCAR_data["two_step_lasso_union", "empirical_SE"],
                        scenario_5_MCAR_data["two_step_lasso_union", "empirical_SE"]
@@ -559,217 +559,217 @@ MNAR_variable_selection_methods   <- c(rep("Fully-adjusted", times = 5),
 MNAR_missingness_handling_methods <- rep(c("CCA", "Within-MI", "Across-MI", "Indicator-encoding", "Dichotomizing"), times = 5)
 
 MNAR_causal_estimate <- c(scenario_1_MNAR_data["fully_adjusted", "causal_estimate"],
-                          NaN,
+                          scenario_2_MNAR_data["fully_adjusted", "causal_estimate"],
                           scenario_3_MNAR_data["fully_adjusted", "causal_estimate"],
                           scenario_4_MNAR_data["fully_adjusted", "causal_estimate"],
                           scenario_5_MNAR_data["fully_adjusted", "causal_estimate"],
                           
                           scenario_1_MNAR_data["unadjusted", "causal_estimate"],
-                          NaN,
+                          scenario_2_MNAR_data["unadjusted", "causal_estimate"],
                           scenario_3_MNAR_data["unadjusted", "causal_estimate"],
                           scenario_4_MNAR_data["unadjusted", "causal_estimate"],
                           scenario_5_MNAR_data["unadjusted", "causal_estimate"],
                           
                           scenario_1_MNAR_data["two_step_lasso", "causal_estimate"],
-                          NaN,
+                          scenario_2_MNAR_data["two_step_lasso", "causal_estimate"],
                           scenario_3_MNAR_data["two_step_lasso", "causal_estimate"],
                           scenario_4_MNAR_data["two_step_lasso", "causal_estimate"],
                           scenario_5_MNAR_data["two_step_lasso", "causal_estimate"],
                           
                           scenario_1_MNAR_data["two_step_lasso_X", "causal_estimate"],
-                          NaN,
+                          scenario_2_MNAR_data["two_step_lasso_X", "causal_estimate"],
                           scenario_3_MNAR_data["two_step_lasso_X", "causal_estimate"],
                           scenario_4_MNAR_data["two_step_lasso_X", "causal_estimate"],
                           scenario_5_MNAR_data["two_step_lasso_X", "causal_estimate"],
                           
                           scenario_1_MNAR_data["two_step_lasso_union", "causal_estimate"],
-                          NaN,
+                          scenario_2_MNAR_data["two_step_lasso_union", "causal_estimate"],
                           scenario_3_MNAR_data["two_step_lasso_union", "causal_estimate"],
                           scenario_4_MNAR_data["two_step_lasso_union", "causal_estimate"],
                           scenario_5_MNAR_data["two_step_lasso_union", "causal_estimate"]
 ) %>% as.numeric()
 
 MNAR_bias               <- c(scenario_1_MNAR_data["fully_adjusted", "causal_bias"],
-                             NaN,
+                             scenario_2_MNAR_data["fully_adjusted", "causal_bias"],
                              scenario_3_MNAR_data["fully_adjusted", "causal_bias"],
                              scenario_4_MNAR_data["fully_adjusted", "causal_bias"],
                              scenario_5_MNAR_data["fully_adjusted", "causal_bias"],
                              
                              scenario_1_MNAR_data["unadjusted", "causal_bias"],
-                             NaN,
+                             scenario_2_MNAR_data["unadjusted", "causal_bias"],
                              scenario_3_MNAR_data["unadjusted", "causal_bias"],
                              scenario_4_MNAR_data["unadjusted", "causal_bias"],
                              scenario_5_MNAR_data["unadjusted", "causal_bias"],
                              
                              scenario_1_MNAR_data["two_step_lasso", "causal_bias"],
-                             NaN,
+                             scenario_2_MNAR_data["two_step_lasso", "causal_bias"],
                              scenario_3_MNAR_data["two_step_lasso", "causal_bias"],
                              scenario_4_MNAR_data["two_step_lasso", "causal_bias"],
                              scenario_5_MNAR_data["two_step_lasso", "causal_bias"],
                              
                              scenario_1_MNAR_data["two_step_lasso_X", "causal_bias"],
-                             NaN,
+                             scenario_2_MNAR_data["two_step_lasso_X", "causal_bias"],
                              scenario_3_MNAR_data["two_step_lasso_X", "causal_bias"],
                              scenario_4_MNAR_data["two_step_lasso_X", "causal_bias"],
                              scenario_5_MNAR_data["two_step_lasso_X", "causal_bias"],
                              
                              scenario_1_MNAR_data["two_step_lasso_union", "causal_bias"],
-                             NaN,
+                             scenario_2_MNAR_data["two_step_lasso_union", "causal_bias"],
                              scenario_3_MNAR_data["two_step_lasso_union", "causal_bias"],
                              scenario_4_MNAR_data["two_step_lasso_union", "causal_bias"],
                              scenario_5_MNAR_data["two_step_lasso_union", "causal_bias"]
 ) %>% as.numeric()
 
 MNAR_bias_as_proportion <- c(scenario_1_MNAR_data["fully_adjusted", "causal_bias_proportion"],
-                             NaN,
+                             scenario_2_MNAR_data["fully_adjusted", "causal_bias_proportion"],
                              scenario_3_MNAR_data["fully_adjusted", "causal_bias_proportion"],
                              scenario_4_MNAR_data["fully_adjusted", "causal_bias_proportion"],
                              scenario_5_MNAR_data["fully_adjusted", "causal_bias_proportion"],
                              
                              scenario_1_MNAR_data["unadjusted", "causal_bias_proportion"],
-                             NaN,
+                             scenario_2_MNAR_data["unadjusted", "causal_bias_proportion"],
                              scenario_3_MNAR_data["unadjusted", "causal_bias_proportion"],
                              scenario_4_MNAR_data["unadjusted", "causal_bias_proportion"],
                              scenario_5_MNAR_data["unadjusted", "causal_bias_proportion"],
                              
                              scenario_1_MNAR_data["two_step_lasso", "causal_bias_proportion"],
-                             NaN,
+                             scenario_2_MNAR_data["two_step_lasso", "causal_bias_proportion"],
                              scenario_3_MNAR_data["two_step_lasso", "causal_bias_proportion"],
                              scenario_4_MNAR_data["two_step_lasso", "causal_bias_proportion"],
                              scenario_5_MNAR_data["two_step_lasso", "causal_bias_proportion"],
                              
                              scenario_1_MNAR_data["two_step_lasso_X", "causal_bias_proportion"],
-                             NaN,
+                             scenario_2_MNAR_data["two_step_lasso_X", "causal_bias_proportion"],
                              scenario_3_MNAR_data["two_step_lasso_X", "causal_bias_proportion"],
                              scenario_4_MNAR_data["two_step_lasso_X", "causal_bias_proportion"],
                              scenario_5_MNAR_data["two_step_lasso_X", "causal_bias_proportion"],
                              
                              scenario_1_MNAR_data["two_step_lasso_union", "causal_bias_proportion"],
-                             NaN,
+                             scenario_2_MNAR_data["two_step_lasso_union", "causal_bias_proportion"],
                              scenario_3_MNAR_data["two_step_lasso_union", "causal_bias_proportion"],
                              scenario_4_MNAR_data["two_step_lasso_union", "causal_bias_proportion"],
                              scenario_5_MNAR_data["two_step_lasso_union", "causal_bias_proportion"]
 ) %>% as.numeric()
 
 MNAR_coverage           <- c(scenario_1_MNAR_data["fully_adjusted", "causal_coverage"],
-                             NaN,
+                             scenario_2_MNAR_data["fully_adjusted", "causal_coverage"],
                              scenario_3_MNAR_data["fully_adjusted", "causal_coverage"],
                              scenario_4_MNAR_data["fully_adjusted", "causal_coverage"],
                              scenario_5_MNAR_data["fully_adjusted", "causal_coverage"],
                              
                              scenario_1_MNAR_data["unadjusted", "causal_coverage"],
-                             NaN,
+                             scenario_2_MNAR_data["unadjusted", "causal_coverage"],
                              scenario_3_MNAR_data["unadjusted", "causal_coverage"],
                              scenario_4_MNAR_data["unadjusted", "causal_coverage"],
                              scenario_5_MNAR_data["unadjusted", "causal_coverage"],
                              
                              scenario_1_MNAR_data["two_step_lasso", "causal_coverage"],
-                             NaN,
+                             scenario_2_MNAR_data["two_step_lasso", "causal_coverage"],
                              scenario_3_MNAR_data["two_step_lasso", "causal_coverage"],
                              scenario_4_MNAR_data["two_step_lasso", "causal_coverage"],
                              scenario_5_MNAR_data["two_step_lasso", "causal_coverage"],
                              
                              scenario_1_MNAR_data["two_step_lasso_X", "causal_coverage"],
-                             NaN,
+                             scenario_2_MNAR_data["two_step_lasso_X", "causal_coverage"],
                              scenario_3_MNAR_data["two_step_lasso_X", "causal_coverage"],
                              scenario_4_MNAR_data["two_step_lasso_X", "causal_coverage"],
                              scenario_5_MNAR_data["two_step_lasso_X", "causal_coverage"],
                              
                              scenario_1_MNAR_data["two_step_lasso_union", "causal_coverage"],
-                             NaN,
+                             scenario_2_MNAR_data["two_step_lasso_union", "causal_coverage"],
                              scenario_3_MNAR_data["two_step_lasso_union", "causal_coverage"],
                              scenario_4_MNAR_data["two_step_lasso_union", "causal_coverage"],
                              scenario_5_MNAR_data["two_step_lasso_union", "causal_coverage"]
 ) %>% as.numeric()
 
 MNAR_blocked_paths <- c(scenario_1_MNAR_data["fully_adjusted", "blocked_paths"],
-                        NaN,
+                        scenario_2_MNAR_data["fully_adjusted", "blocked_paths"],
                         scenario_3_MNAR_data["fully_adjusted", "blocked_paths"],
                         scenario_4_MNAR_data["fully_adjusted", "blocked_paths"],
                         scenario_5_MNAR_data["fully_adjusted", "blocked_paths"],
                         
                         scenario_1_MNAR_data["unadjusted", "blocked_paths"],
-                        NaN,
+                        scenario_2_MNAR_data["unadjusted", "blocked_paths"],
                         scenario_3_MNAR_data["unadjusted", "blocked_paths"],
                         scenario_4_MNAR_data["unadjusted", "blocked_paths"],
                         scenario_5_MNAR_data["unadjusted", "blocked_paths"],
                         
                         scenario_1_MNAR_data["two_step_lasso", "blocked_paths"],
-                        NaN,
+                        scenario_2_MNAR_data["two_step_lasso", "blocked_paths"],
                         scenario_3_MNAR_data["two_step_lasso", "blocked_paths"],
                         scenario_4_MNAR_data["two_step_lasso", "blocked_paths"],
                         scenario_5_MNAR_data["two_step_lasso", "blocked_paths"],
                         
                         scenario_1_MNAR_data["two_step_lasso_X", "blocked_paths"],
-                        NaN,
+                        scenario_2_MNAR_data["two_step_lasso_X", "blocked_paths"],
                         scenario_3_MNAR_data["two_step_lasso_X", "blocked_paths"],
                         scenario_4_MNAR_data["two_step_lasso_X", "blocked_paths"],
                         scenario_5_MNAR_data["two_step_lasso_X", "blocked_paths"],
                         
                         scenario_1_MNAR_data["two_step_lasso_union", "blocked_paths"],
-                        NaN,
+                        scenario_2_MNAR_data["two_step_lasso_union", "blocked_paths"],
                         scenario_3_MNAR_data["two_step_lasso_union", "blocked_paths"],
                         scenario_4_MNAR_data["two_step_lasso_union", "blocked_paths"],
                         scenario_5_MNAR_data["two_step_lasso_union", "blocked_paths"]
 ) %>% as.numeric()
 
 MNAR_proportion_paths <- c(scenario_1_MNAR_data["fully_adjusted", "proportion_paths"],
-                           NaN,
+                           scenario_2_MNAR_data["fully_adjusted", "proportion_paths"],
                            scenario_3_MNAR_data["fully_adjusted", "proportion_paths"],
                            scenario_4_MNAR_data["fully_adjusted", "proportion_paths"],
                            scenario_5_MNAR_data["fully_adjusted", "proportion_paths"],
                            
                            scenario_1_MNAR_data["unadjusted", "proportion_paths"],
-                           NaN,
+                           scenario_2_MNAR_data["unadjusted", "proportion_paths"],
                            scenario_3_MNAR_data["unadjusted", "proportion_paths"],
                            scenario_4_MNAR_data["unadjusted", "proportion_paths"],
                            scenario_5_MNAR_data["unadjusted", "proportion_paths"],
                            
                            scenario_1_MNAR_data["two_step_lasso", "proportion_paths"],
-                           NaN,
+                           scenario_2_MNAR_data["two_step_lasso", "proportion_paths"],
                            scenario_3_MNAR_data["two_step_lasso", "proportion_paths"],
                            scenario_4_MNAR_data["two_step_lasso", "proportion_paths"],
                            scenario_5_MNAR_data["two_step_lasso", "proportion_paths"],
                            
                            scenario_1_MNAR_data["two_step_lasso_X", "proportion_paths"],
-                           NaN,
+                           scenario_2_MNAR_data["two_step_lasso_X", "proportion_paths"],
                            scenario_3_MNAR_data["two_step_lasso_X", "proportion_paths"],
                            scenario_4_MNAR_data["two_step_lasso_X", "proportion_paths"],
                            scenario_5_MNAR_data["two_step_lasso_X", "proportion_paths"],
                            
                            scenario_1_MNAR_data["two_step_lasso_union", "proportion_paths"],
-                           NaN,
+                           scenario_2_MNAR_data["two_step_lasso_union", "proportion_paths"],
                            scenario_3_MNAR_data["two_step_lasso_union", "proportion_paths"],
                            scenario_4_MNAR_data["two_step_lasso_union", "proportion_paths"],
                            scenario_5_MNAR_data["two_step_lasso_union", "proportion_paths"]
 ) %>% as.numeric()
 
 MNAR_empirical_SE <- c(scenario_1_MNAR_data["fully_adjusted", "empirical_SE"],
-                       NaN,
+                       scenario_2_MNAR_data["fully_adjusted", "empirical_SE"],
                        scenario_3_MNAR_data["fully_adjusted", "empirical_SE"],
                        scenario_4_MNAR_data["fully_adjusted", "empirical_SE"],
                        scenario_5_MNAR_data["fully_adjusted", "empirical_SE"],
                        
                        scenario_1_MNAR_data["unadjusted", "empirical_SE"],
-                       NaN,
+                       scenario_2_MNAR_data["unadjusted", "empirical_SE"],
                        scenario_3_MNAR_data["unadjusted", "empirical_SE"],
                        scenario_4_MNAR_data["unadjusted", "empirical_SE"],
                        scenario_5_MNAR_data["unadjusted", "empirical_SE"],
                        
                        scenario_1_MNAR_data["two_step_lasso", "empirical_SE"],
-                       NaN,
+                       scenario_2_MNAR_data["two_step_lasso", "empirical_SE"],
                        scenario_3_MNAR_data["two_step_lasso", "empirical_SE"],
                        scenario_4_MNAR_data["two_step_lasso", "empirical_SE"],
                        scenario_5_MNAR_data["two_step_lasso", "empirical_SE"],
                        
                        scenario_1_MNAR_data["two_step_lasso_X", "empirical_SE"],
-                       NaN,
+                       scenario_2_MNAR_data["two_step_lasso_X", "empirical_SE"],
                        scenario_3_MNAR_data["two_step_lasso_X", "empirical_SE"],
                        scenario_4_MNAR_data["two_step_lasso_X", "empirical_SE"],
                        scenario_5_MNAR_data["two_step_lasso_X", "empirical_SE"],
                        
                        scenario_1_MNAR_data["two_step_lasso_union", "empirical_SE"],
-                       NaN,
+                       scenario_2_MNAR_data["two_step_lasso_union", "empirical_SE"],
                        scenario_3_MNAR_data["two_step_lasso_union", "empirical_SE"],
                        scenario_4_MNAR_data["two_step_lasso_union", "empirical_SE"],
                        scenario_5_MNAR_data["two_step_lasso_union", "empirical_SE"]
